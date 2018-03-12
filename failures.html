@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html>
+    <header> 
+        <link href="./style.css" type="text/css" rel="stylesheet">
+        
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        
+        <title> Dealing with Failures </title>
+    </header>
+    
+    <body>
+        
+        <nav>
+            <div id="links">
+                <ul>
+                    <li><img id="logo" src="logo.png" alt="Home" height="35px"></li>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./failures.html">Failures</a></li>
+                    <li><a href="./costs.html">Costs</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="head">
+            <h1 id="heading"> Dealing with Failures </h1>
+        </div>
+        
+        <div class="main">
+            <!-- Introduction -->
+            <p> For datacenters to be considered reliable, the services provided need to be available to its users at all times, the less downtime the better, so datacenters need to ensure that their systems do not fail and are able to operate continuously for a long period of time. 
+            Although this may be possible in theory, with the number of servers involved, preventing all failures is not plausible, or in the least, it would be extremely expensive to achieve. The solution is to configure the software so that it will be able to work around failures, to keep running despite the failure of its components, we say the software is fault-tolerant.</p>
+
+
+            <!-- Failure severity -->
+            <p class="indfree">Service-level failures can be separated into four main categories as follows, from least to most severe:</p>
+            <ul>
+                <li> <strong>Masked</strong> which are faults caught by fault-tolerant software and which are only visible to the service provider;</li>
+                <li> <strong>Degraded</strong>, where the service is still available but in reduced quality (<em>e.g. increased response time, imperfect but still acceptable results</em>), this is referred to as graceful degradation;</li>
+                <li> <strong>Unreachable</strong> is when the service is not available to users, this can hurt Internet service revenue as it is related to traffic volume;</li>
+                <li> <strong>Corrupted</strong>, at which point data is lost and/or corrupted, it is in particular damaging if it cannot be recovered (<em>e.g. user data, operational logs</em>).</li>
+            </ul>
+            
+            <br>
+        
+            <!-- Cost and Causes of failures -->
+            <h4> <span class="glyphicon glyphicon-gbp"></span> Cost and Causes of Failures</h4>
+            <p>In a census conducted by Jim Gray in the 90s, it was found that machine crashes in datacenters were most commonly caused by software faults, with them being the source of roughly 60% of experienced outages, whereas the other 20% were induced by maintenance and operation errors and disk and memory faults made up less than 10% of reported outages<sup><a href="#1">[1]</a></sup>. <br>
+            Figure <strong>1</strong> shows disruption data collected by Google's Robert Stroud in a timeframe of 6 months, and categorized by its source. We can see that a big percentage of the failures were due to software malfunctions whereas only 8% were due to hardware faults.<br>
+            <img src="FailureCauses.PNG" alt="Histogram of sources of disruptions at Google" class="center"> <br>
+            <span class="glyphicon glyphicon-stats"></span> <strong>Figure 1:</strong> Distribution of service disruption events by most likely cause at one of Google's main services<sup><a href="#2">[2]</a></sup>.
+            </p>
+            
+            
+            <br>
+            <p>The cost of failures are generally thought to be very high, in particular if it’s non-hardware induced, because once a failure occurs, it tends to spread rapidly to other systems, causing disruptions to several cloud services, including those not directly affected by the error, and their users. For instance, in April 2011, AWS experienced service disruption due to a read/write operation fault in a single location which in turn affected other systems trying to access it<sup><a href="#3">[3]</a></sup>. <br>
+            When a machine is being repaired, not only is it out of commission and lowers the availability of the services provided by the datacenter, but it also requires replacements parts and skilled labour, which can be costly especially whether the repair actually fixes the problem.</p>
+
+            <p>It is therefore imperative for softwares to not only be able to be able to deal with individual faults but also reduce the impact of the problem while it is fixing it, especially considering identifying the issue and repairing it can be time-consuming. So recovering from a failure is a four-step process : 1) detection; 2) mitigation; 3) diagnosis; and 4) repair<sup><a href="#4">[4]</a></sup>. In the case that the failure is too damaging or repair takes an unreasonable amount of time, a better solution would be to use roll-back recovery, to have the system revert to an earlier, correct version of itself. </p>
+
+            <br>
+            
+            <!-- Fault tolerance -->
+            <h4> <span class="glyphicon glyphicon-cd"></span> Fault-tolerance</h4>
+            <p>Fault tolerance is achieved by predicting any potential faults based on the machine’s behaviour and designing the program to deal with them, this is usually based on the concept of redundancy. This property is especially useful when it can catch most cases of failures with a low false-positive rate. But in reality, predictions are unlikely to be 100% effective. The issue stems from the fact that not all problems can be predicted. In particular, outages related to weather/natural disasters<sup><a href="5">[5]</a> <a href="6">[6]</a></sup> or cyber crimes are hard to prevent. <br>
+
+            Variations in log messages are also a source of the inaccuracy. This could be due to different message formats from using devices from different manufacturers; or time delays between message collection from different device which would cause messages to be in a different order than they were created, so if the fault detection system relies on the order of messages, it would not be reliable in this situation; softwares/machines upgrades and replacements can also render the analysis outdated. According to Y. Watanabe et al, prediction can be improved using message classification by similarity, regardless of format, and pattern learning; a test carried out in a real datacenter showed results of 80% precision<sup><a href="#7">[7]</a></sup>.</p>
+
+            <br>
+
+            <!-- Hardware failures -->
+            <h4> <span class="glyphicon glyphicon-hdd"></span> Hardware faults</h4>
+            <p>As for hardware related errors, it is generally not easy to differentiate between them and OS or firmware bugs. But according to an investigation into sources of machine crashes, the most common cause were DRAM soft-errors where approximately 1.3% of machines, which had error correcting codes installed, were affected by irreparable errors within one year; and disk errors, with less than 3.5% of the drives experiencing failure in a time frame of 32 months<sup><a href="#8">[8]</a></sup>. Usually, when new products are introduced to the system, machines would experience a higher number of crashes and restarts in the few following months compared to the rest of the times.</p>
+
+            <br>
+            <br>
+            
+            <!-- Conclusion -->
+            <p>Combining the number of servers used with the fault-tolerant software, the need for frequent repairs is not as crucial in order to keep the datacenter running continuously. Despite this, servers still need to be closely monitored because although they may appear to be working perfectly, it’s possible that, internally, they're on the brink of a breakdown.</p>
+        </div>
+            
+        <hr>
+        
+        <div id="References">
+            <p class="indfree"> <span class="glyphicon glyphicon-bookmark"></span> <strong>References</strong></p>
+            
+            <p id="1" class="indfree">[1] J. Gray. “A Census of Tandem System Availability Between 1985 and 1990”, <em>IEEE Transactions on Reliability</em>, vol.39, no.4, pp.409-418. October 1990. [Online]. <br> 
+            Available: <a href="https://pdfs.semanticscholar.org/22a4/ddf4d609c6e9c8a0a0ea6187af4c3178a7ed.pdf" target="_blank">https://pdfs.semanticscholar.org/22a4/ddf4d609c6e9c8a0a0ea6187af4c3178a7ed.pdf</a>
+                
+            <br id="2">[2] L. A. Barroso, and U. Hölzlem. <em>The Datacenter as a Computer</em>. 1st ed. San Rafael: Morgan & Claypool Publishers, 2009, pp. 82-83. [Online]. <br>
+            Available: <a href="http://www.morganclaypool.com/doi/pdf/10.2200/s00193ed1v01y200905cac006" target="_blank">http://www.morganclaypool.com/doi/pdf/10.2200/s00193ed1v01y200905cac006</a>
+            
+            <br id="3">[3] The AWS Team. “Summary of the Amazon EC2 and Amazon RDS Service Disruption in the US East Region”, <em>Amazon Web Services, Inc.</em>, April 2011. [Online]. <br> 
+            Available: <a href="https://aws.amazon.com/message/65648/" target="_blank">https://aws.amazon.com/message/65648/</a>
+            
+            <br id="4">[4] X. Wu et al. <em>NetPilot: Automating Datacenter Network Failure Mitigation</em>. [Online]. <br>
+            Available: <a href="https://dl.acm.org/citation.cfm?id=2342438" target="_blank">https://dl.acm.org/citation.cfm?id=2342438</a>
+            
+            <br id="5">[5] Y.  Sverdlik. "Equinix Power Outage One Reason Behind AWS Cloud Disruption", <em>Data Center Knowledge</em>, March 2018. [Online]. <br>
+            Available: <a href="http://www.datacenterknowledge.com/uptime/equinix-power-outage-one-reason-behind-aws-cloud-disruption" target="_blank">http://www.datacenterknowledge.com/uptime/equinix-power-outage-one-reason-behind-aws-cloud-disruption</a>
+            
+            <br id="6">[6] C. Donnelly. "AWS outage: Datacentre power cut knocks ‘hundreds’ of internet services offline", <em>ComputerWeekly</em>. March 2018. [Online]. <br>
+            Available: <a href="http://www.computerweekly.com/news/252436193/AWS-outage-Datacentre-power-cut-knocks-out-hundreds-of-internet-services" target="_blank">http://www.computerweekly.com/news/252436193/AWS-outage-Datacentre-power-cut-knocks-out-hundreds-of-internet-services</a>
+            
+            <br id="7">[7] Y. Watanabe and Y. Matsumoto. “Online Failure Prediction in Cloud Datacenters,” <em>FUJITSU Sci. Tech</em>, vol. 50, no.1, January 2014. [Online]. <br>
+            Available: <a href="http://www.fujitsu.com/global/documents/about/resources/publications/fstj/archives/vol50-1/paper11.pdf" target="_blank">http://www.fujitsu.com/global/documents/about/resources/publications/fstj/archives/vol50-1/paper11.pdf</a>
+            
+            <br id="8">[8] L. A. Barroso, and U. Hölzlem. <em>The Datacenter as a Computer</em>. 1st ed. San Rafael: Morgan & Claypool Publishers, 2009, pp. 86-87. [Online]. <br>
+            Available: <a href="http://www.morganclaypool.com/doi/pdf/10.2200/s00193ed1v01y200905cac006" target="_blank">http://www.morganclaypool.com/doi/pdf/10.2200/s00193ed1v01y200905cac006</a></p>
+        </div>
+    </body>
+</html>

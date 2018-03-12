@@ -1,0 +1,62 @@
+/* Navigation styling */
+nav {
+    position: fixed;
+    background: #0f8799;
+    font-size: 15px;
+    top: 0;
+    width: 100%;
+    height: 50px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    float: left;
+    margin-top: 5px;
+    vertical-align: top;
+}
+
+
+nav a {
+    display: block;
+    color: white;
+    padding: 10px 10px 10px 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background: white;
+    color: #0f8799;
+}
+
+/* Body styling */
+.head {
+    margin-top: 50px;
+    background: #14b4cc;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px; 
+    text-align: center;
+}
+
+body {
+    margin: 0;
+}
+
+.main, #References {
+    margin: 35px 20% 35px 10%;   
+}
+
+p:not([class=indfree]) {
+    text-indent: 30px;
+}
+
+.center {
+    display: block;
+    margin: 0 auto;
+}
