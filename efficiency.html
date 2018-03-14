@@ -15,121 +15,138 @@
 <h1 style="color: white; margin-top: 0px;"> DATACENTER ENERGY EFFICIENCY:</h1>
     
 <div class="content">
-<p>
-    Energy efficiency of a WSC is broadly defined as the amount of computational work performed divided by the total energy used in the process. If we use an equation to represent the efficiency of a datacenter, it can be factored into three components:  </p>
-<img src="PUE.PNG">
-    <h2><span class="glyphicon glyphicon-flash" aria-hidden="true"></span>PUE:
-        </h2>
-<p>
-    The Power Usage Effectiveness reflects how efficiently a datacenter uses energy, especially, power consumed by the actual computing equipments like servers, network equipment, etc. It can also be calculated using this formula:</p>
-<img src="PUE.jpg">
+    <p>
+        Energy efficiency of a WSC is broadly defined as the amount of computational work performed divided by the total energy used in the process. If we use an equation to represent the efficiency of a datacenter, it can be factored into three components:  </p>
+    <img src="PUE.PNG">
+        <h3><span class="glyphicon glyphicon-flash" aria-hidden="true"></span>PUE:</h3>
+    <p>
+        The Power Usage Effectiveness reflects how efficiently a datacenter uses energy, especially, power consumed by the actual computing equipments like servers, network equipment, etc. It can also be calculated using this formula:
+    </p>
+    <img src="PUE.jpg">
     <br>
-    
-<p><br>
-    Sadly, the PUE of the average datacenter is very poor at the moment. 85% of current datacenters were estimated to have a PUE of greater than 3.0(which eans the building’s mechanical and electrical systems consume twice as much power as the actual computing load), while a well-designed datacenter should have a PUE of less than 2<sup><a href="#1">[1]</a></sup>.
 
-    High PUE values are due to multiple sources of overhead, and it is mostly caused by a historical lack of attention to efficiency imposed by physics.
-    </p>
-    
-    
-<p>
-    Term (b) SPUE (server PUE) is used to represent the ratio of total server input power to its useful power, where useful power includes only the power consumed by the electronic components directly involved in the computation / useful power excludes all losses in power supplies, VRMs (voltage regulator modules), and fans. The current common value is around 1.6 to 1.8.
+    <p>
+    <br>
+        Sadly, the PUE of the average datacenter is very poor at the moment. 85% of current datacenters were estimated to have a PUE of greater than 3.0(which eans the building’s mechanical and electrical systems consume twice as much power as the actual computing load), while a well-designed datacenter should have a PUE of less than 2<sup><a href="#1">[1]</a></sup>.
 
-    The combination of PUE and SPUE (TPUE = PUE * SPUE) therefore constitutes an accurate assessment of the joint efficiency of the total electromechanical overheads in facilities and computing equipment. <sup><a href="#1">[1]</a></sup>
+        High PUE values are due to multiple sources of overhead, and it is mostly caused by a historical lack of attention to efficiency imposed by physics.
     </p>
-    
-<img src="Loss.jpg">
-<h2><span class="glyphicon glyphicon-edit" aria-hidden="true">Sources of Efficiency Losses:</h2>
-<p>
-    1.	Most of the efficiency losses are encountered on the chiller.<br></p>
-    <p style="margin-left: 30px">
-        a.	lots of fan power used to deliver cool air over long distances from CRACs (computer room air conditioning) to equipment racks, as does moving warm air back to the CRAC intakes and unfortunately cold and warm air may mix during these long paths.
-    </p> 
-    <p style="margin-left: 30px">
-        b.	chilled water temperatures near 10°C are needed to keep the datacenter very cool, increasing chiller load
-    </p>
-    <p style="margin-left: 30px">
-        c.	condensation on the coils of the CRAC units requiring additional energy to be spent on rehumidification elsewhere.
-    </p>
-<p>
-2.	The uninterruptible power supply (UPS) is the source of most conversion losses
-</p>
-<p>
-3.	Power Distribution Unit (PDU) <sup><a href="#3">[3]</a></sup> :  a device for controlling electrical power in a datacenter. </p>
-<p>
-4.	Two stepping-down transformers (115kV -> 13.2kV in US -> 480V) are fairly efficient (transformation losses typically are below half a percentage)</p>
-<p>
-5.	A fair amount of power (1–3%) can be lost bringing low-voltage power (110 or 220 V) to the racks if the respective cables are long.
-</p>
-    <h2>How do we improve the power efficiency?
-    </h2>
-    
-    <p>
-1.	Review the datacenter operating temperature. Instead of the traditional setting of 20°C, set the CRAC to around 24~27°C to use less cooling so less energy is needed. <sup><a href="#4">[4]</a></sup>
-        </p>
-    <p>
-2.	Use water cooling - Water conducts heat far better than air, so water is much more efficient as a cooling medium. 
-        </p>
-    <p>
-3.	Careful air flow handling – do not allow hot air to mix with cold air</p>
-    <p>
-4.	Per-server 12-V DC UPS. Each server contains a mini-UPS, essentially a battery that floats on the DC side of the server’s power supply and is 99.99% efficient. These per-server UPSs eliminate the need for a facility-wide UPS, increasing the efficiency of the overall power infrastructure<sup><a href="#1">[1]</a></sup></p>
-    
-    
-<h2>How does the load effects the efficiency?
-    </h2>
-<p>
-    In cloud computing environment, the allocation of different tasks to VMs is known as the load.<sup><a href="#5">[5]</a></sup> Servers spend relatively little aggregate time at high load levels, and individual servers in these systems also spend little time completely idle
-</p>
-    
-<p>
-Ideally, energy-proportional systems will consume almost no power when idle and gradually consume more power as the activity level increases. A simple way to reason about this ideal curve is to assume linearity between activity and power usage, with no constant factors(however, that linearity is not necessarily the optimal relationship for energy savings).
-</p>
-    
-<p>
-Energy-proportional machines would exhibit a wide dynamic power range. It is generally accepted that energy efficiency is one of the features favored by evolutionary processes.
-</p>
-    
-<h3><span class="glyphicon glyphicon-tree-deciduous" aria-hidden="true">CONCLUSIONS</h3>
-    
-<p>
-    Energy efficiency is a key cost driver for WSCs, and we expect energy usage to become an increasingly important factor of WSC design. </p>
-<p2>- The current state of the industry is poor: the average WSC wastes two thirds or more of its energy.</p2>
-<br>
-<p2>- power and energy must be better managed to minimize operational cost.</p2>
-<br>
-<p2>- today’s hardware does not gracefully adapt its power usage to changing load conditions which case a server’s efficiency degrades seriously under light load.</p2>
-<br>
-<p2>- energy optimization is a complex end-to-end problem, requiring an intricate coordination across hardware, operating systems, virtual machines, middleware, applications, and operations organizations.</p2>
-<br>
-    
-<p>
-    
-    
-    </p>
-<hr>
-<h3><span class="glyphicon glyphicon-book" aria-hidden="true"></span>References</h3>
-<p>
-[1]U. Hölzle and L. Barroso, The Datacenter As a Computer: An Introduction to the Design of Warehouse-scale Machines (Synthesis Lectures on Computer Architecture). Morgan & Claypool Publishers.
-</p>
 
-<p>
-[2]"Power usage effectiveness", En.wikipedia.org, 2018. [Online]. Available: https://en.wikipedia.org/wiki/Power_usage_effectiveness. [Accessed: 09- Mar- 2018].
-</p>
+    <p>
+        Term (b) SPUE (server PUE) is used to represent the ratio of total server input power to its useful power, where useful power includes only the power consumed by the electronic components directly involved in the computation / useful power excludes all losses in power supplies, VRMs (voltage regulator modules), and fans. The current common value is around 1.6 to 1.8.
 
-<p>
-[3]"What is power distribution unit (PDU)? - Definition from WhatIs.com", SearchDataCenter, 2018. [Online]. Available: http://searchdatacenter.techtarget.com/definition/power-distribution-unit-PDU. [Accessed: 11- Mar- 2018].
-</p>
-    
-<p>
-[4]"Ten steps to achieve better data centre energy efficiency", ComputerWeekly.com, 2018. [Online]. Available: http://www.computerweekly.com/tip/Ten-steps-to-achieve-better-data-centre-energy-efficiency. [Accessed: 11- Mar- 2018].
-</p>
-<p>
-[5]S. Mishra, B. Sahoo and P. Parida, "Load Balancing in Cloud Computing: A big Picture", 2018. .
-</p>
-    </h3>
-    </h2>
-</div>
+        The combination of PUE and SPUE (TPUE = PUE * SPUE) therefore constitutes an accurate assessment of the joint efficiency of the total electromechanical overheads in facilities and computing equipment. <sup><a href="#1">[1]</a></sup>
+    </p>
+
+    <img src="Loss.jpg">
+        <h3><span class="glyphicon glyphicon-edit" aria-hidden="true">Sources of energy losses:</span></h3>
+    <p>
+        1.	Most of the efficiency losses are encountered on the chiller.
+    <br>
+    </p>
+        <p2>
+            a.	lots of fan power used to deliver cool air over long distances from CRACs (computer room air conditioning) to equipment racks, as does moving warm air back to the CRAC intakes and unfortunately cold and warm air may mix during these long paths.
+        </p2> 
+        <br>
+        <p2>
+            b.	chilled water temperatures near 10°C are needed to keep the datacenter very cool, increasing chiller load
+        </p2>
+        <br>
+        <p2>
+            c.	condensation on the coils of the CRAC units requiring additional energy to be spent on rehumidification elsewhere.
+        </p2>
+        <br>
+    <p>
+    2.	The uninterruptible power supply (UPS) is the source of most conversion losses
+    </p>
+
+    <p>
+    3.	Power Distribution Unit (PDU) <sup><a href="#3">[3]</a></sup> :  a device for controlling electrical power in a datacenter. 
+    </p>
+
+    <p>
+    4.	Two stepping-down transformers (115kV -> 13.2kV in US -> 480V) are fairly efficient (transformation losses typically are below half a percentage)
+    </p>
+
+    <p>
+    5.	A fair amount of power (1–3%) can be lost bringing low-voltage power (110 or 220 V) to the racks if the respective cables are long.
+    </p>
+
+        <h3><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>How do we improve the power efficiency?</h3>
+
+    <p>
+    1.	Review the datacenter operating temperature. Instead of the traditional setting of 20°C, set the CRAC to around 24~27°C to use less cooling so less energy is needed. <sup><a href="#4">[4]</a></sup>
+    </p>
+
+    <p>
+    2.	Use water cooling - Water conducts heat far better than air, so water is much more efficient as a cooling medium. 
+    </p>
+
+    <p>
+    3.	Careful air flow handling – do not allow hot air to mix with cold air
+    </p>
+
+    <p>
+    4.	Per-server 12-V DC UPS. Each server contains a mini-UPS, and these per-server UPSs eliminate the need for a facility-wide UPS, increasing the efficiency of the overall power infrastructure<sup><a href="#1">[1]</a></sup>
+    </p>
+        <h3><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>How does the load effects the efficiency?</h3>
+
+    <p>
+        In cloud computing environment, the allocation of different tasks to VMs is known as the load.<sup><a href="#5">[5]</a></sup> From the research we realize that servers spend relatively little aggregate time at high load levels, and individual servers in these systems also spend little time completely idle. Hence, how to effiently allocate workload to different servers is an important area that we can  look into.
+    </p>
+
+    <p>
+    Ideally, energy-proportional systems will consume almost no power when idle and gradually consume more power as the activity level increases, in another word, if you draw a graph it should be a linear line. Such linear relationship would make energy efficiency uniform across the activity range, rather than decaying with decreases in activity levels. Hence, energy-proportional machines have dynamic power ranges. 
+    </p>
+
+    <p>Improvements can be done on some components. For example, disk drives. It wasted a large fraction of its energy just to keep the platters spinning. If we can choose a disk with lower rotational speed and multiple heads, more energy can be saved for sure.
+    </p>
+
+    <h3><span class="glyphicon glyphicon-file" aria-hidden="true"></span>The role of software in energy proportionality</h3>
+    <p>As we've discussed before, hardware does play an important role in energy efficicency. However, better power management and scheduling software infrastrcuture can be very helpful as well. For example, intelligent use of power management features, using low-overhead inactive or active low-power modes, as well as implementing power friendly scheduling of tasks can all make better use of energy of hardware systems.<sup><a href="#1">[1]</a></sup><sup><a href="#6">[6]</a></sup>
+    </p>
+
+        <h3><span class="glyphicon glyphicon-tree-deciduous" aria-hidden="true">Conclusion</span></h3>
+
+    <p>
+        Energy efficiency is a key cost driver for WSCs, and we expect energy usage to become an increasingly important factor of WSC design. 
+    </p>
+    <p2>- We need to realize that the current state of the industry is very poor,: the average WSC wastes two thirds or more of its energy.</p2>
+    <br>
+    <p2>- power and energy must be better managed to minimize operational cost.</p2>
+    <br>
+    <p2>- The load do affects a server's efficiency. However, today’s hardware does not gracefully adapt its power usage to changing load conditions, which case the efficiency degrades seriously under light load.</p2>
+    <br>
+    <p2>- energy optimization is a complex end-to-end problem, requiring an intricate coordination across hardware, software, VMs and operations organizations.</p2>
+    <br> 
+    <hr>
+
+
+        <h3><span class="glyphicon glyphicon-book" aria-hidden="true"></span>References</h3>
+    <div id="1">
+    [1]U. Hölzle and L. Barroso, The Datacenter As a Computer: An Introduction to the Design of Warehouse-scale Machines (Synthesis Lectures on Computer Architecture). Morgan & Claypool Publishers.
+    </div>
+
+    <div id="2">
+    [2]"Power usage effectiveness", En.wikipedia.org, 2018. [Online]. Available: https://en.wikipedia.org/wiki/Power_usage_effectiveness. [Accessed: 09- Mar- 2018].
+    </div>
+
+    <div id="3">
+    [3]"What is power distribution unit (PDU)? - Definition from WhatIs.com", SearchDataCenter, 2018. [Online]. Available: http://searchdatacenter.techtarget.com/definition/power-distribution-unit-PDU. [Accessed: 11- Mar- 2018].
+    </div>
+
+    <div id="4">
+    [4]"Ten steps to achieve better data centre energy efficiency", ComputerWeekly.com, 2018. [Online]. Available: http://www.computerweekly.com/tip/Ten-steps-to-achieve-better-data-centre-energy-efficiency. [Accessed: 11- Mar- 2018].
+    </div>
+
+    <div id="5">
+    [5]S. Mishra, B. Sahoo and P. Parida, "Load Balancing in Cloud Computing: A big Picture", 2018. .
+    </div>
+
+    <div id="6">
+    [6]"Energy proportional computing", En.wikipedia.org, 2018. [Online]. Available: https://en.wikipedia.org/wiki/Energy_proportional_computing. [Accessed: 14- Mar- 2018].
+    </div>
+</div>   
 </body>    
 </html>
 
