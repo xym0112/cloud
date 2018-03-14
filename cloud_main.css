@@ -13,6 +13,11 @@ body {
 .navbar-inverse {
     background-color: white;
     border-color: white;
+    height: 50px;
+}
+
+.navbar-brand {
+    padding-top: 8px;
 }
 
 .navbar-inverse .navbar-brand,
