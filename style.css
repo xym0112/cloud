@@ -1,0 +1,41 @@
+/* Body styling */
+.head {
+    background: #14b4cc;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px; 
+    text-align: center;
+}
+
+.mainhead {
+    background: linear-gradient(to bottom right, #084851, #0f8799, #14b4cc, white);
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px; 
+    text-align: center;
+    font-style: oblique;
+}
+
+body {
+    margin: 0;
+}
+
+.main, #References {
+    margin: 35px 15% 35px 15%;   
+}
+
+p:not([class=indfree]) {
+    text-indent: 30px;
+}
+
+.center {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.grey {
+    background: #E8E8E8;
+}
