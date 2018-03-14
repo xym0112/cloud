@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <header> 
+        <link href="./style.css" type="text/css" rel="stylesheet">    
+        
+        <!-- Latest compiled and minified BootStrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script> 
+        $(function(){
+          $(".navbar").load("navbar.html"); 
+        });
+        </script>
+        
+        <title> Cost of a Datacenter </title>
+    </header>
+    
+    <body>
+        
+        <!-- Navigation bar -->
+        <span id="0" class="navbar"></span>
+        
+    
+        <!-- Text -->
+        <div class="head">
+            <h1> Cost of a Datacenter </h1>
+        </div>
+        
+        <div class="main">
+            <p>As the use of Cloud computing increases in this industry, software and hardware architects need not only to focus on ensuring reliability of datacenters’ servers but also on designing energy efficient, massive-scale devices.</p>
+            
+            <p class="indfree">Costs can be separated into two main categories :            
+            <ul style="list-style-type: none;">
+                <li> <span class="glyphicon glyphicon-gbp"></span> Capital Expenses (CapEx) 
+                <br> These are single-payments in exchange for goods and services, the investments made upfront. <br>
+                <em>For example, there is the construction of the datacenter, purchase of servers, etc…</em> </li>
+                <br>
+                <li> <span class="glyphicon glyphicon-usd"></span> Operational Expenses (OpEx)
+                <br>These are recurring expenses paid to run the equipment and maintain the datacenter.  They can vary greatly depending on the datacenter’s geographic location, size, maintenance standard and frequency, equipment, and such.
+                    <br> <em>Examples include electricity bills, repairs, maintenance, salaries, etc…</em></li>
+            </ul>
+            Combining the two and taking into account the depreciation of the equipment, we obtain the total cost of ownership of a datacenter (TCO).</p>
+        
+            <br>
+            
+            <p>It is estimated that approximately 70-80% of the construction cost can be accounted for by mechanical and electrical systems, in particular power to keep the servers running, cooling which keeps the environmental conditions suitable for the equipment, and space<sup><a href="#1">[1]</a></sup>. This diverges from standard office buildings whose electrical components make up a significantly lower percentage of total costs. For this reason, datacenters will typically use dollars per watt as opposed to dollar per square meter to characterise costs.</p>
+            
+            <p>In the long run, as computer performance improves and require an increasing amount of the planet’s scarce resources, power related costs are likely to rise and will eventually exceed the initial capital costs and overshadow them. Hence to keep costs low, it is important to have energy-efficient machines. <br>
+            Several actions can be taken to improve energy consumptions of datacenters<sup><a href="#2">[2]</a></sup>. According to CDCDG, in most infrastructures, changes in these three areas can improve electrical usage considerably without the need for any major redesign<sup><a href="#3">[3]</a></sup>:</p>
+            
+            <ol style="list-style-type: none;">
+                <li> <span class="glyphicon glyphicon-fire"></span> Cooling systems <sup><a href="./data_centre_basics.html/#cooling"><span class="glyphicon glyphicon-new-window"></span></a></sup><br> 
+                Datacenters would often run all of their CRAC units, including the redundant ones, making the overall operation less efficient. Shutting down the unnecessary units could cut down a significant amount of used energy. <br>
+                For centers using the chilled water system, chillers should be run at full capacity, otherwise more energy is used. Similarly for cooling towers.</li>
+                <br>
+                <li> <span class="glyphicon glyphicon-flash"></span> UPS systems <sup><a href="./data_centre_basics.html/#ups"><span class="glyphicon glyphicon-new-window"></span></a></sup><br> 
+                The efficiency of an UPS is not much different as the load varies, so reducing the number of active UPS modules could save a lot of energy.</li>
+                <br>
+                <li> <span class="glyphicon glyphicon-certificate"></span> Lighting systems <br> 
+                It is common for lights to be left on in deserted areas of a datacenter which drains a lot of energy. A building management system would greatly improve electrical usage.</li>
+            </ol>
+            
+            <br>    
+        
+            <p>There is also the option of low-power servers to consider. Although low-power is always better in terms of minimising energy, it may not be the optimal choice in regards to cost. In the long-term, since TCO is dominated by power-related expenses so high-end, low-power servers are evidently the better choice. However, in the short-term, it is high-power servers that would be the more suitable option as they are cheaper. <br>
+            Essentially, it could be said that for a datacenter, the cost of a server depends on the lifetime of the facility.</p>
+            
+            <p>It is also worth noting that when designing a datacenter, spare room is usually left for future growth, for additional servers, disks, and RAM. This means that in reality, the facility will seldom run at full capacity and costs would actually be higher.</p>
+        </div>
+        
+        <hr>
+        
+        <div id="References">
+            <p class="indfree"> <span class="glyphicon glyphicon-book"></span> <strong>References</strong></p>
+            
+            <p id="1" class="indfree">[1] W. P Turner et al. <em>Dollars per kW plus Dollars per Square Foot are a Better Data Center Cost Model than Dollars per Square Foot Alone</em>. [Online]. <br> 
+            Available: <a href="https://connect.ufl.edu/cns/DCO/ecdc/ECDC%20Construction%20Project/CNS%20Specifications%20and%20Estimates/Cost%20and%20Budget/Models/Dollars%20Per%20kW%20plus%20Dollars%20per%20sqFt%20(Uptime%20Inst).pdf" target="_blank">https://goo.gl/c45xYL</a>
+                
+            <br id="2"> [2] CDCDG. <em>Green Data Centers - Balancing Energy Efficiency and Reliability</em>. [Online]. <br>
+            Available: <a href="http://www.cdcdg.com/index.php/article-21" target="_blank">http://www.cdcdg.com/index.php/article-21</a>
+
+            <br id="3"> [3] CDCDG. “Saving Energy Costs in an Existing Data Center”, <em>Power Quality Assurance Magazine</em>, April 1996. [Online]. <br>
+            Available: <a href="http://www.cdcdg.com/index.php/article-17" target="_blank">http://www.cdcdg.com/index.php/article-17</a>\
+            </p>
+        </div>
+        
+    </body>
+    
+</html>
