@@ -1,0 +1,70 @@
+.container-fluid {
+    padding-bottom: 10px;
+}
+.container_grey {
+    background-color: #F8F8F8;
+    padding-bottom: 10px;
+}
+
+.indent {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.indent > p, ul {
+    padding-left: 50px;
+}
+
+body {
+    padding-top: 30px; /* add space between content and navbar */
+}
+
+.navbar-inverse {
+    background-color: white;
+    border-color: white;
+    height: 50px;
+}
+
+.navbar-brand {
+    padding-top: 8px;
+}
+
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+    color: #14b4cc;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #14b4cc;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+    background-color: #14B4CC;
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+    color: #FFF;
+    background-color: #14B4CC;
+}
+
+.navbar-inverse .navbar-text {
+    color: #FFF;
+}
+
+.navbar-inverse .navbar-nav > li.dropdown.open.active > a:hover, 
+.navbar-inverse .navbar-nav > li.dropdown.open > a {
+   color: #FFF;
+   background-color: #14B4CC;
+   border-color: #FFF;
+}
+
+/*change colour of links in dropdown below */
+.dropdown-menu > li > a:hover, 
+.dropdown-menu > li > a:focus {
+   color: #FFF;
+   background-color: #14B4CC;  
+}

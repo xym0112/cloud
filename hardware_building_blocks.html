@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hardware Building Blocks</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>$(function() {
+                $(".navbar").load("navbar.html");
+        });</script>
+    <link rel="stylesheet" href="info_pages.css">
+</head>
+<body>
+    <span id="0" class="navbar"></span>
+    <div class="title_banner">
+        <h1><span class="glyphicon glyphicon-th-large"></span> The Hardware Building Blocks for Datacenters</h1>
+    </div>
+    <div class="container">
+        <h3 style="margin-top: 5px"><span class="glyphicon glyphicon-info-sign"></span> What are WSCs made up of?</h3>
+        <p>WSCs today tend to be made up of lots of low-end servers. This tends to be the case since:</p>
+        <ul>
+            <li>low-end servers are more cost-efficient when compared to high-end ones</li>
+            <li>low-end servers have the main components in common with high-end ones and so can take advantage of economies of scale – the cost per unit reduces as the amount of production increases<a href="#ref_hw"><sup>[2]</sup></a></li>
+        </ul>
+        <h3><span class="glyphicon glyphicon-thumbs-up"></span> Advantages of using smaller, slower CPUs</h3>
+        <ul>
+            <li>Slower CPUs have a better power efficiency: usually, when the CPU frequency goes down by k, the CPU power goes down by O(k<sup>2</sup>)</li>
+            <li>Lower-end processors are cheaper such that lots of smaller CPUs are two to five times cheaper for the same amount of throughput</li>
+        </ul>
+        <p>One shouldn’t completely rely on smaller servers since there are disadvantages associated with having too many of them.<a href="#ref_hw"><sup>[1]</sup></a></p>
+        <h3><span class="glyphicon glyphicon-thumbs-down"></span> Disadvantages of having too many small servers</h3>
+        <ul>
+            <li>Software development costs increasing since applications many need to be optimised more or have to be parallelised to make use of the multiple servers.</li>
+            <li>Networking becoming more difficult. For instance, the cost increases since you have to consider more ports for an already expensive set of switches. There are also going to be more networking delays due to the multitude of smaller servers.</li>
+        </ul>
+        <p>Most large-scale services make use of lower-end server machines due to the cost efficiency which allows them to be competitive.</p>
+        <p>The key is to reach an equilibrium between the capacity and performance from the components that make up a WSC.<a href="#ref_hw"><sup>[1]</sup></a></p>
+        <h4 id="ref_hw"><span class="glyphicon glyphicon-book"></span> References</h4>
+        <p>[1] L. A. Barroso, and U. Hölzlem. The Datacenter as a Computer. 1st ed. San Rafael:  Morgan & Claypool Publishers, 2009, pp. 31-37. [Online] Available: http://www.morganclaypool.com/doi/pdf/10.2200/s00193ed1v01y200905cac006</p>
+        <p>[2] I. Staff, "Economies of Scale", Investopedia, 2018. [Online]. Available: https://www.investopedia.com/terms/e/economiesofscale.asp.</p>
+    </div>
+</body>
+</html>
