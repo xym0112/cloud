@@ -4,13 +4,17 @@
 <title>Cloud - new trends</title>
 <link rel="stylesheet" type="text/css" href="cloud.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script> 
+        $(function(){
+          $(".navbar").load("navbar.html"); 
+        });
+        </script>
 </head>
+    
 <body>
-<div id="navbar">
-  <a class="active" href="javascript:void(0)">Home</a>
-  <a href="http://127.0.0.1:55116/efficiency.html">Efficiency</a>
-  <a href="http://127.0.0.1:55116/business.html">Business</a>
-</div>
+<!-- Navigation bar -->
+<span id="0" class="navbar"></span>
     
 <h1 style="color: white; margin-top: 0px;">New trends in cloud</h1>
     
@@ -83,22 +87,7 @@
     [4]"Growing Cloud Market Lifts Fortunes of Hyperscale Providers - Datamation", Datamation.com, 2018. [Online]. Available: https://www.datamation.com/cloud-computing/growing-cloud-market-lifts-fortunes-of-hyperscale-providers.html. [Accessed: 14- Mar- 2018].
     </div>
     <div id="5">
-    [5]"9 Cloud Computing Trends that will Take 2017 by Storm!", Hacker Noon, 2018. [Online]. Available: https://hackernoon.com/9-cloud-computing-trends-that-will-take-2017-by-storm-55f1ecdb5f68. [Accessed: 14- Mar- 2018].
+    [5]"9 Cloud Computing Trends that will Take 2017 by Storm!", Hacker Noon, 2018. [Online]. Available: https://hackernoon.com/9-cloud-computing-trends-that-will-take-2017-by-storm-55f1ecdb5f68. [Accessed: 14- Mar- 2018].</div>
 </div>
-    
-    
-<script>
-window.onscroll = function() {myFunction()};
-
-var navbar = document.getElementById("navbar");
-
-var sticky = navbar.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
-</script>
+</body>
+</html>
