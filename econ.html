@@ -2,26 +2,35 @@
 <html>
     
     <head>
-<!--        <meta charset="utf-8">-->
+   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script> 
+        $(function(){
+          $(".navbar").load("navbar.html"); 
+        });
+        </script>
+        <meta charset="utf-8">
 <!--        <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
-<!--
         <title>Cloud Computing Economics</title>
         <link rel="stylesheet" href="cloud.css">
         <meta name="description" content="Cloud Computing">
--->
-<!--        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/boostrap/3.3.7/css/boostrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg320mUcww7on3RYdgVa+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     </head>
     <body>
+        <!-- Navigation bar -->
+        <span id="0" class="navbar"></span>
         
-        
+<!--
         <div class="container"> 
+        
         <div class="nav">
             <ul>
             <li><a href="#">HOME</a></li>
-            <li><a href="#">Economics Model</a></li>
+            <li><a href="#">Economic Models</a></li>
             </ul>    
         </div>
         </div>    
+-->
 
 
         
@@ -33,7 +42,13 @@
         <h2>Elasticity: Shifting the Risk</h2>
         
         <p>
-          Although the economic appeal of Cloud Computing is often described as “converting capital expenses to operating
+<!--
+            To have a brief overview of the Cloud Computing economics model, <i>A Berkeley View of Cloud Computing</i><sup>[1]</sup> suggests that the phrase "pay as you go" captures the economic benefit to the buyer, although the econimics appeal of Cloud Computing is often descrided as "converting capital expenses to operating expenses" <i>(CapEx to OpEx)</i><sup>[2]</sup>
+            
+            
+            
+-->
+            Although the economic appeal of Cloud Computing is often described as “converting capital expenses to operating
           expenses” (CapEx to OpEx), we believe the phrase “pay as you go” more directly captures the economic benefit to
           the buyer. Hours purchased via Cloud Computing can be distributed non-uniformly in time; in the networking community, this way of selling bandwidth is already known as <i>usage-based pricing<sup>[1]</sup> </i> In addition, the absence of up-front capital expense
           allows capital to be redirected to core business investment.
@@ -136,9 +151,10 @@
         
         <p>A related issue is the software complexity and costs of (partial or full) migrating data from a legacy enterprise application into the Cloud. While migration is a one-time task, the amount of effort can be significant and it needs to be considered as a factor in deciding to use Cloud Computing. This task is already spawning new business opportunities for companies that provide data integration across public and private Clouds.</p>
         
-        <h2>References</h2>
+        <h2><span class="glyphicon glyphicon-book" aria-hidden="true"></span>References</h2>
         <p>
-            [1] Cloudera, Hadoop training and support [online]. Available from: http://www.cloudera.com/.
+            [1] A Berkeley View of Cloud Computing[online]
+            <br>[1] Cloudera, Hadoop training and support [online]. Available from: http://www.cloudera.com/.
             <br>[2] Amazon.com CEO Jeff Bezos on Animoto [online]. April 2008. Available from: http://blog.animoto.com/2008/
             04/21/amazon-ceo-jeff-bezos-on-animoto/.
             <br>[3] GRAY, J. Distributed Computing Economics. Queue 6, 3 (2008), 63–68. Available from: http://portal.acm.org/ft_gateway.cfmid=1394131&type=digital%20edition&coll=Portal&dl=GUIDE&CFID=19219697&CFTOKEN=50259492
