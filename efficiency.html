@@ -25,7 +25,7 @@
     <center><p>(Source:<sup><a href="#1">[1]</a></sup>)</p></center>
         <h3><span class="glyphicon glyphicon-flash" aria-hidden="true"></span>PUE:</h3>
     <p>
-        The Power Usage Effectiveness reflects how efficiently a datacenter uses energy, especially, power consumed by the actual computing equipments like servers, network equipment, etc. It can also be calculated using this formula:
+        The Power Usage Effectiveness reflects how efficiently a datacenter uses energy, especially, the power consumed by the actual computing equipment like servers, network equipment, etc. It can also be calculated using this formula:
     </p>
     <img src="PUE.jpg">
     <center><p>(Source:<sup><a href="#2">[2]</a></sup>)</p></center>
@@ -33,7 +33,7 @@
 
     <p>
     <br>
-        Sadly, the PUE of the average datacenter is very poor at the moment. 85% of current datacenters were estimated to have a PUE of greater than 3.0(which eans the building’s mechanical and electrical systems consume twice as much power as the actual computing load), while a well-designed datacenter should have a PUE of less than 2<sup><a href="#1">[1]</a></sup>.
+        Sadly, the PUE of the average datacenter is very poor at the moment. 85% of current datacenters were estimated to have a PUE of greater than 3.0(which means the building’s mechanical and electrical systems consume twice as much power as the actual computing load), while a well-designed datacenter should have a PUE of less than 2<sup><a href="#1">[1]</a></sup>.
 
         High PUE values are due to multiple sources of overhead, and it is mostly caused by a historical lack of attention to efficiency imposed by physics.
     </p>
@@ -69,11 +69,11 @@
     </p>
 
     <p>
-    3.	Power Distribution Unit (PDU) <sup><a href="#3">[3]</a></sup> :  a device for controlling electrical power in a datacenter. 
+    3.	Power Distribution Unit (PDU)<sup><a href="#3">[3]</a></sup> :  a device for controlling electrical power in a datacenter. 
     </p>
 
     <p>
-    4.	Two stepping-down transformers (115kV -> 13.2kV in US -> 480V) are fairly efficient (transformation losses typically are below half a percentage)
+    4.	Two stepping-down transformers (115kV -> 13.2kV in the US -> 480V) are fairly efficient (transformation losses typically are below half a percentage)
     </p>
 
     <p>
@@ -91,7 +91,7 @@
     </p>
 
     <p>
-    3.	Careful air flow handling – do not allow hot air to mix with cold air
+    3.	Careful airflow handling – do not allow hot air to mix with cold air
     </p>
 
     <p>
@@ -100,7 +100,7 @@
         <h3><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>How does the load effects the efficiency?</h3>
 
     <p>
-        In cloud computing environment, the allocation of different tasks to VMs is known as the load.<sup><a href="#5">[5]</a></sup> From the research we realize that servers spend relatively little aggregate time at high load levels, and individual servers in these systems also spend little time completely idle. Hence, how to effiently allocate workload to different servers is an important area that we can  look into.
+        In cloud computing environment, the allocation of different tasks to VMs is known as the load.<sup><a href="#5">[5]</a></sup> From the research, we realize that servers spend relatively little aggregate time at high load levels, and individual servers in these systems also spend little time completely idle. Hence, how to efficiently allocate workload to different servers is an important area that we can  look into.
     </p>
 
     <p>
@@ -111,7 +111,7 @@
     </p>
 
     <h3><span class="glyphicon glyphicon-file" aria-hidden="true"></span>The role of software in energy proportionality:</h3>
-    <p>As we've discussed before, hardware does play an important role in energy efficicency. However, better power management and scheduling software infrastrcuture can be very helpful as well. For example, intelligent use of power management features, using low-overhead inactive or active low-power modes, as well as implementing power friendly scheduling of tasks can all make better use of energy of hardware systems.<sup><a href="#1">[1]</a></sup><sup><a href="#6">[6]</a></sup>
+    <p>As we've discussed before, hardware does play an important role in energy efficiency. However, better power management and scheduling software infrastructure can be very helpful as well. For example, intelligent use of power management features, using low-overhead inactive or active low-power modes, as well as implementing power friendly scheduling of tasks can all make better use of energy of hardware systems.<sup><a href="#1">[1]</a></sup><sup><a href="#6">[6]</a></sup>
     </p>
 
         <h3><span class="glyphicon glyphicon-tree-deciduous" aria-hidden="true"></span>Conclusion:</h3>
@@ -123,7 +123,7 @@
     <br>
     <p2>- power and energy must be better managed to minimize operational cost.</p2>
     <br>
-    <p2>- The load do affects a server's efficiency. However, today’s hardware does not gracefully adapt its power usage to changing load conditions, which case the efficiency degrades seriously under light load.</p2>
+    <p2>- The load does affect a server's efficiency. However, today’s hardware does not gracefully adapt its power usage to changing load conditions, which case the efficiency degrades seriously under light load.</p2>
     <br>
     <p2>- energy optimization is a complex end-to-end problem, requiring an intricate coordination across hardware, software, VMs and operations organizations.</p2>
     <br> 
