@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-    
+
     <head>
-   
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script> 
+        <script>
         $(function(){
-          $(".navbar").load("navbar.html"); 
+          $(".navbar").load("navbar.html");
         });
         </script>
         <meta charset="utf-8">
@@ -19,151 +19,130 @@
     <body>
         <!-- Navigation bar -->
         <span id="0" class="navbar"></span>
-        
-<!--
-        <div class="container"> 
-        
-        <div class="nav">
-            <ul>
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">Economic Models</a></li>
-            </ul>    
-        </div>
-        </div>    
--->
 
+        <div class="heading"><h1 align="center"><b>Cloud Computing Economics</b></h1></div>
 
-        
-        
-        
-        <div class="heading"><h1 align="center">Cloud Computing Economics</h1></div>
-        
         <div class="main">
-        <h2>Elasticity: Shifting the Risk</h2>
-        
+        <h2><span class="glyphicon glyphicon-link" aria-hidden="true"></span> Elasticity: Shifting the Risk</h2>
+
         <p>
-<!--
-            To have a brief overview of the Cloud Computing economics model, <i>A Berkeley View of Cloud Computing</i><sup>[1]</sup> suggests that the phrase "pay as you go" captures the economic benefit to the buyer, although the econimics appeal of Cloud Computing is often descrided as "converting capital expenses to operating expenses" <i>(CapEx to OpEx)</i><sup>[2]</sup>
+            To have a brief overview on Cloud Computing economic models, <i>A Berkeley View of Cloud Computing</i><sup><a href="#1">[1]</a></sup> suggests that the phrase "pay as you go" captures the economic benefit to the buyer, although the economic appeal of Cloud Computing is often described as "converting capital expenses to operating expenses". <i>(i.e. CapEx to OpEx)</i>
             
+            <br>In a more concrete way to explain this advantage would be the non-uniformly distribution of hours you purchased. This way of selling strategy is known as <i>usage-based pricing</i><sup><a href="#1">[2]</a></sup>
+        </p>
+
+
+        <p>
+            <br><span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span> <em>Let's start elasticity with an easy example.</em>
+        </p>
+
+        <br><center><img src="ex1.png" height="150"></center>
+
+        <p>
+            <br>From the example shown above, we can easily find out that the elasticity plays an important role in reducing the waste of non-used server-hours. Therefore, the total cost we paid for paying-as-you-go is obviously less than what we usually pay for buying all the sever-hours. <i>(Figure (a))</i>
             
+        </p>
+
+            <p>Nevertheless, this example is inadequate to demonstrate the advantages of paying-as-you-go compared with buying. What's more, most services experience much periodic demand variation as well as some unexpected events, which cause the sharp increase of the demand variation. This, furthermore, has a bad influence on the buying the server-hour, as it underestimates the total volume of services and this could have a severe consequence that a significant number of customers would, therefore, be lost forever due to poor services.<i>(Figure (b))</i>
             
--->
-            Although the economic appeal of Cloud Computing is often described as “converting capital expenses to operating
-          expenses” (CapEx to OpEx), we believe the phrase “pay as you go” more directly captures the economic benefit to
-          the buyer. Hours purchased via Cloud Computing can be distributed non-uniformly in time; in the networking community, this way of selling bandwidth is already known as <i>usage-based pricing<sup>[1]</sup> </i> In addition, the absence of up-front capital expense
-          allows capital to be redirected to core business investment.
-        </p>
-        
-
-        <p>
-            <em>Let's start elasticity with an easy example.</em>
-        </p>
-
-        <img src="ex1.png" height="150"/>
-        
-        <p>
-             This example demonstrates how elasticity allows reducing this
-            waste and can therefore more than compensate for the potentially higher cost per server-hour of paying-as-you-go vs. buying.
-        </p>
-        
-        <p>
-            In fact, the above example underestimates the benefits of elasticity, because in addition to simple diurnal patterns, most nontrivial services also experience seasonal or other periodic demand variationn (e.g., e-commerce peaks in December and photo sharing sites peak after holidays) as well as some unexpected demand bursts due to external events(e.g., news events).
-        
-        </p>
-        
-        <p>
-            They may also underestimate the spike (Figure 2(b)), however, accidentally turning away excess users. While
-            the monetary effects of overprovisioning are easily measured, those of underprovisioning are harder to measure yet
-            potentially equally serious: not only do rejected users generate zero revenue, they may never come back due to poor
-            service. Figure 2(c) aims to capture this behavior: users will desert an underprovisioned service until the peak user load equals the datacenter’s usable capacity, at which point users again receive acceptable service, but with fewer
-            potential users.
-        </p>
-        <img src="elas.png" height="200"/>
-        <img src="elas2.png" height="200"/>
-        <img src="elas3.png" height="200"/>
-        
-        <p>
-            <em>Let's have a detailed look at tranferring risks.</em>
-        </p>
-        
-        <img src="ex2.png" height="250"/>
-
-        <p>
-            Do such scenarios really occur in practice? When Animoto <sup>[2]</sup> made its service available via Facebook, it experienced
-            a demand surge that resulted in growing from 50 servers to 3500 servers in three days. Even if the average
-            utilization of each server was low, no one could have foreseen that resource needs would suddenly double every 12
-            hours for 3 days. After the peak subsided, traffic fell to a level that was well below the peak. So in this real world
-            example, scale-up elasticity was not a cost optimization but an operational requirement, and scale-down elasticity
-            allowed the steady-state expenditure to more closely match the steady-state workload.
 
         </p>
-       
-        
+
         <p>
-        Elasticity is valuable to established companies as well as startups. For example, Target, the nation’s second largest
-        retailer, uses AWS for the Target.com website. While other retailers had severe performance problems and intermittent
-        unavailability on “Black Friday” (November 28), Target’s and Amazon’s sites were just slower by about 50%. Similarly, Salesforce.com hosts customers ranging from 2 seat to 40,000+ seat customers.
+            Figure(c) described another possibility of underprovision of customers, the capacity equals to the demand variation in some time, but not always. In this case, the turned away customers are fewer than which in Figure(b), but this causes same consequences as well - still losing a potential amount of customers.
+            
+        </p>
+        <center><img src="elas.png" height="250"/>
+            <img src="elas2.png" height="250"/></center>
+            <center><img src="elas3.png" height="250"/></center>
+
+        <p>
+            <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span> <em>Now, let's have a detailed look at tranferring risks.</em>
+        </p>
+
+            <br><center><img src="ex2.png" height="250"></center>
+
+        <p>
+            <br>Do such scenarios really exist in our daily life?
+            <br><br> Here is a real-world example. 
+            <br><br>When Animoto <sup><a href="#3">[3]</a></sup> made his service available via Facebook, it experienced a super surge which resulted in a 7000% times more servers needed in three days. At first, no one ever expected this tremendous increase of customers. Originally they decided to have only 35 servers in total. Although the average amount of customers is under control, Animoto determined that he would not let any customers down due to underestimation of stripe value, hence the server doubled every 12 hours for 3 days.  
 
         </p>
-        
-        <img src="formula.png" height="70" width="1000"/>
-        
-        <p>
-            The left-hand side multiplies the net revenue per user-hour (revenue realized per user-hour minus cost of paying
-            Cloud Computing per user-hour) by the number of user-hours, giving the expected profit from using Cloud Computing.
-            The right-hand side performs the same calculation for a fixed-capacity datacenter by factoring in the average
-            utilization, including nonpeak workloads. Whichever side is greater represents the opportunity for higher profit.  
-        </p>
-        
-        <h2>Comparing Costs: Should I Move to the Cloud?</h2>
-        
-        <p>
-            Whereas the previous section tried to quantify the economic value of specific Cloud Computing benefits such as elasticity, this section tackles an equally important but larger question: Is it more economical to move my existing datacenter-hosted service to the cloud, or to keep it in a datacenter?
-        </p>
-        <p>Table 5 updates Gray’s 2003 cost data <sup>[3]</sup> to 2008, allowing us to track the rate of change of key technologies for Cloud Computing for the last 5 years.
-        </p>
-        
-        <img src="costtable.png" height="250"/>
-        
-        <P>To facilitate calculations, Gray calculated what $1 bought in 2003. Table 5 shows his numbers vs. 2008 and
-        compares to EC2/S3 charges. At first glance, it appears that a given dollar will go further if used to purchase hardware
-        in 2008 than to pay for use of that same hardware. However, this simple analysis glosses over several important factors.</P>
-        
+            <center><img src="formula.png" height="70" width="1000"/></center>
 
-        <p><b>Pay seperately per resource</b>&nbsp;:Most applications do not make equal use of computation, storage, and network bandwidth; some are CPU-bound, others network-bound, and so on, and may saturate one resource while underutilizing others. Pay-as-you-go Cloud Computing can charge the application separately for each type of resource, reducing the waste of underutilization.</p>
-        
-        <p><b>Power, cooling and physical plant costs</b>&nbsp;:The costs of power, cooling, and the amortized cost of the building are
-        missing from our simple analyses so far. Hamilton estimates that the costs of CPU, storage and bandwidth roughly
-        double when those costs are amortized over the building’s lifetime <sup>[4,5]</sup>. Using this estimate, buying 128 hours
-        double when those costs are amortized over the building’s lifetime <sup>[4,5]</sup>. Using this estimate, buying 128 hours
-        of CPU in 2008 really costs $2 rather than $1, compared to $2.56 on EC2. Similarly, 10 GB of disk space costs $2
-        rather than $1, compared to $1.20–$1.50 per month on S3. Lastly, S3 actually replicates the data at least 3 times for
-        durability and performance, ensure durability, and will replicate it further for performance is there is high demand for
-        the data. That means the costs are $6.00 when purchasing vs. $1.20 to $1.50 per month on S3.</p>
-        
-        <p><b>Operations costs</b>&nbsp;:Today, hardware operations costs are very low.On one hand, since Utility Computing uses virtual machines instead of physical machines,
-        from the cloud user’s point of view these tasks are shifted to the cloud provider. On the other hand, depending on the
-        level of virtualization, much of the software management costs may remain—upgrades, applying patches, and so on.</p>
-        
-        <p>With the above caveats in mind, here is a simple example of deciding whether to move a service into the cloud</p>
-        
-        <img src="ex3.png" height="150"/>
-        
-        <p>A related issue is the software complexity and costs of (partial or full) migrating data from a legacy enterprise application into the Cloud. While migration is a one-time task, the amount of effort can be significant and it needs to be considered as a factor in deciding to use Cloud Computing. This task is already spawning new business opportunities for companies that provide data integration across public and private Clouds.</p>
-        
-        <h2><span class="glyphicon glyphicon-book" aria-hidden="true"></span>References</h2>
+        <p><br>The left-hand side demonstrates the expected profit earning from cloud computing, multiplying the user hours by the net revenue. 
+            On the right-hand side, it gives a fixed-capacity datacenter in the average utilization by doing the similar calculation. The greater value of either side represents the opportunity for large profit. This links to our next sub-topic.<span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+        </p>
+
+        <h2><br><span class="glyphicon glyphicon-gbp" aria-hidden="true"></span>Comparing Costs: Should I Move to the Cloud?</h2>
+
         <p>
-            [1] A Berkeley View of Cloud Computing[online]
-            <br>[1] Cloudera, Hadoop training and support [online]. Available from: http://www.cloudera.com/.
-            <br>[2] Amazon.com CEO Jeff Bezos on Animoto [online]. April 2008. Available from: http://blog.animoto.com/2008/
-            04/21/amazon-ceo-jeff-bezos-on-animoto/.
-            <br>[3] GRAY, J. Distributed Computing Economics. Queue 6, 3 (2008), 63–68. Available from: http://portal.acm.org/ft_gateway.cfmid=1394131&type=digital%20edition&coll=Portal&dl=GUIDE&CFID=19219697&CFTOKEN=50259492
-            <br>[4]HAMILTON, J. Cost of Power in Large-Scale Data Centers [online]. November 2008. Available from: http://perspectives.mvdirona.com/2008/11/28/CostOfPowerInLargeScaleDataCenters.aspx.
-            <br>[5] HAMILTON, J. Cooperative Expendable Micro-Slice Servers (CEMS):Low Cost, Low Power Servers for Internet-Scale
+            <br>This section will guide you through another essential aspect of Cloud Computing: "Is it more economical to move my existing datacenter-hosted service to the cloud, or to keep it in a datacenter?"<sup><a href="#4">[4]</a></sup>
+        </p>
+        <p>The table below updates Gray’s 2003 cost data <sup><a href="#5">[5]</a></sup> to 2008, allowing us to track the rate of change of key technologies for Cloud Computing for the last 5 years.
+        </p>
+
+            <br><center><img src="costtable.png" height="300"/></center>
+
+        <P><br>To make the table easier to understand, Gray calculated what could be bought in 2003 using $1. In the table above, it shows those figures as well as the figure in 2008. At first glance, it seems that one dollar will go further if it was used to purchase hardware in 2008 than to pay for use of that same hardware. However, this simple analysis glosses over several important factors.<sup><a href="#6">[6]</a></sup>
+                    
+        <p><b><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> Pay seperately per resource</b>&nbsp;: Because most of the users do not usually make equal use of storage, computation and network; some of these are network-bounded, some are CPU-bounded and so on. Cloud Computing enables users to pay separately per resources. Therefore, the total waste of resources and money can be kept to a lowest bound.
+            
+        </p>
+
+        <p><b><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> Power, cooling and physical plant costs</b>&nbsp;: So far, from the above simple analysis, we have not covered the cost of power, cooling system, physical plants, and the amortized cost of building them. Hamilton estimates that the costs of CPU, storage and bandwidth roughly double when those costs are amortized over the building’s lifetime <sup><a href="#7">[7,8]</a></sup> The cost would be expectedly high when considering those aspects.
+
+        <p><b><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> Operations costs</b>&nbsp;: Nowadays, hardware operations costs are very low. One minimally trained staff is able to operate and replace the broken components on the server level. On one hand, because the Utility Computing uses virtual machines instead of physical machines, from a cloud user's perspective, it could be much easier to operate as those Cloud Computing servers are provided by the organization, rather than building or maintain the hardware block all by themselves. However, on the other hand, we still need to take the cost of software management into account, including upgrading, applying patches, and so on.
+        </p>
+
+            <p><span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span> <em>With the above caveats in mind, here is a simple example of deciding whether to move a service into the cloud.</em></p>
+
+            <br><center><img src="ex3.png" height="200"/></center>
+
+        <p><br> Lastly, another related issue which needed to be taken into account is the software complexity and the costs of migrating all the data from the previous datacenter to the Cloud. While this action can be made at one go, the effort required to accomplish this is still significant. This, however, results in spawning new business opportunities for companies that provide data transformation across private and public Clouds.
+        </p>
+
+        <h3><span class="glyphicon glyphicon-book" aria-hidden="true"></span> References</h3>
+        
+            <div id="1">
+            [1] A Berkeley View of Cloud Computing[online] 
+            <br>Available from:<a href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2009/EECS-2009-28.pdf">https://www2.eecs.berkeley.edu/Pubs/TechRpts/2009/EECS-2009-28.pdf</a>
+            </div>    
+            
+            <div id="2">Washington  Post  Case  Study: Amazon  Web  Services  [online]. <br>Available  from: <a href="http://aws.amazon.com/solutions/case-studies/washington-post/">http://aws.amazon.com/solutions/case-studies/washington-post</a>
+            </div>    
+            
+            <div id="3">[3] Amazon.com CEO Jeff Bezos on Animoto [online]. April 2008. <br>Available from: <a href="http://blog.animoto.com/2008/
+            04/21/amazon-ceo-jeff-bezos-on-animoto/">http://blog.animoto.com/2008/
+            04/21/amazon-ceo-jeff-bezos-on-animoto/</a>
+            </div>
+            
+            <div id="4">
+            [4] A Berkeley View of Cloud Computing[online] 
+            <br>Available from:<a href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2009/EECS-2009-28.pdf">https://www2.eecs.berkeley.edu/Pubs/TechRpts/2009/EECS-2009-28.pdf</a>
+            </div> 
+            
+            <div id="5">[5] GRAY, J. Distributed Computing Economics. Queue 6, 3 (2008), 63–68. <br>Available from: <a href="http://portal.acm.org/ft_gateway.cfmid=1394131&type=digital%20edition&coll=Portal&dl=GUIDE&CFID=19219697&CFTOKEN=50259492">http://portal.acm.org/ft_gateway.cfmid=1394131&type=digital%20edition&coll=Portal&dl=GUIDE&CFID=19219697&CFTOKEN=50259492</a>
+            </div>
+            
+            <div id="6">
+            [6] A Berkeley View of Cloud Computing[online] P13
+            <br>Available from:<a href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2009/EECS-2009-28.pdf">https://www2.eecs.berkeley.edu/Pubs/TechRpts/2009/EECS-2009-28.pdf</a>
+            </div>    
+            
+            <div id="7">[7]HAMILTON, J. Cost of Power in Large-Scale Data Centers [online]. November 2008. <br>Available from:<a href=" http://perspectives.mvdirona.com/2008/11/28/CostOfPowerInLargeScaleDataCenters.aspx">http://perspectives.mvdirona.com/2008/11/28/CostOfPowerInLargeScaleDataCenters.aspx</a>
+            </div>
+            
+            <div id="8">
+            [8] HAMILTON, J. Cooperative Expendable Micro-Slice Servers (CEMS):Low Cost, Low Power Servers for Internet-Scale
             Services. In Conference on Innovative Data Systems Research (CIDR ’09) (January 2009).
-        </p>
+            </div>    
+            <br>
+            <br>
+            <br>
+            <br>
         
+
         </div>
         </body>
 <html>
-      
